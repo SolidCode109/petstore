@@ -4,11 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\ApiController;
 use Illuminate\Http\Request;
-use App\Models\Pet;
 use GuzzleHttp\Client;
-use Illuminate\Support\Facades\Validator;
 
-use function Pest\Laravel\json;
 
 class PetStoreController extends ApiController
 {
