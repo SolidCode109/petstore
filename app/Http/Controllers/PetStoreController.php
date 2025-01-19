@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\ApiController;
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
+use App\Models\Pet;
 
 
 class PetStoreController extends ApiController
@@ -101,7 +102,7 @@ class PetStoreController extends ApiController
             'category.name' => 'required|string',
             'name' => 'required|string',
             'photoUrls' => 'array',
-            'tags' => 'nullable|regex:/^(\d+\s*,\s*[a-zA-Z0-9]+\s*;?\s*)*$/',
+            'tags' => 'nullable|array',
             'status' => 'required|string|in:available,pending,sold',
         ]);
 
@@ -138,8 +139,11 @@ class PetStoreController extends ApiController
 
     public function deletePet($petId)
     {
+
         try {
             $response = $this->client->delete("pet/{$petId}", ['query' => ['id' => $petId]]);
+
+            $petId = json_decode($response->getBody(), true);
 
             return view('pets.deletePet', compact('petId'));
         } catch (\Exception $e) {

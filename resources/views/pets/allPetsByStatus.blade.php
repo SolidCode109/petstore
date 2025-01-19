@@ -1,4 +1,4 @@
-<div id="container--allPetsByStatus"
+<div id="container--allPetsByStatus">
 
 <h1>Available Pets</h1>
 @if(isset($pets) && count($pets) > 0)

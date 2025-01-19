@@ -40,12 +40,9 @@
 
 <body>
     <div class="container">
-        {{-- Gets --}}
-        {{-- @include('pets.getPetsById')
-        @include('pets.allPetsByStatus') --}}
-
 
         {{-- POST, UPDATE, DELETE --}}
+
         @include('pets.addPet')
         @include('pets.updatePet')
         @include('pets.deletePet')
