@@ -9,10 +9,12 @@ Route::get('/', function () {
 });
 
 
-Route::get('/pet', [PetStoreController::class, 'getPets']);
+Route::get('/pet', [PetStoreController::class, 'getPetsByStatus']);
 Route::get('/pet/{petId}', [PetStoreController::class, 'getPetsById']);
 
+Route::prefix('pet')->group(function(){
+Route::post('/', [PetStoreController::class, 'addPet'])->name('pet.add');
+Route::put('/', [PetStoreController::class,'updatePet'])->name('pet.update');
+Route::delete('/{petId}', [PetStoreController::class, 'deletePet'])->name('pet.delete');
+});
 
-Route::post('/pet', [PetStoreController::class, 'addPet'])->name('pet.add');
-Route::put('/pet', [PetStoreController::class,'updatePet'])->name('pet.update');
-Route::delete('/pet/{petId}', [PetStoreController::class, 'deletePet'])->name('pet.delete');

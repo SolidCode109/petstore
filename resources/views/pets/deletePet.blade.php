@@ -1,9 +1,8 @@
-<h1> Delete Pet </h1>
-<form action="{{ route('pet.delete') }}" method="post">
+<div id="container--deletePet">
+<h1> Delete Pet id=1 </h1>
+<form action="{{ route('pet.delete', [1]) }}" method="post">
         @csrf
         @method('DELETE')
-        <label for="id">Pet ID:</label>
-        <input type="number" id="id" name="id" required>
-
-        <button type="submit">Delete Pet</button>
+        <button type="submit">Submit delete</button>
 </form>
+</div>

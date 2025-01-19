@@ -1,3 +1,5 @@
+<div id="container--allPetsByStatus"
+
 <h1>Available Pets</h1>
 @if(isset($pets) && count($pets) > 0)
     <ul>
@@ -14,3 +16,5 @@
         <strong>Error:</strong> {{ $errors->first('error') }}
     </div>
 @endif
+
+</div>

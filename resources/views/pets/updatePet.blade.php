@@ -1,3 +1,4 @@
+<div id="container--updatePet">
 <h1> Update Pet </h1>
 <form action="{{ route('pet.update') }}" method="post">
         @csrf
@@ -29,3 +30,4 @@
 
         <button type="submit">Add Pet</button>
 </form>
+</div>

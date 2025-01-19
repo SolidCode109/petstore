@@ -1,4 +1,4 @@
-
+<div id="container--getPetsById">
     <h1>Pet by ID</h1>
     @if(isset($petsByID) && count($petsByID) > 0)
         <ul>
@@ -16,3 +16,5 @@
             <strong>Error:</strong> {{ $errors->first('error') }}
         </div>
     @endif
+
+    </div>
